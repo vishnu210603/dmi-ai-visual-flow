@@ -11,31 +11,31 @@ const CTAFooterSection = () => {
         <div className="mb-8">
           <div className="inline-flex items-center gap-2 bg-white bg-opacity-20 rounded-full px-4 py-2 mb-6">
             <Sparkles size={16} className="text-white" />
-            <span className="text-white text-sm font-medium">AI-Powered Design Platform</span>
+            <span className="text-white text-sm font-medium">AI-First Brand Platform</span>
           </div>
           
           <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-            Start Designing with
+            Ready to Scale Your
             <br />
             <span className="bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
-              DMI.ai Today
+              Brand Everywhere?
             </span>
           </h2>
           
           <p className="text-xl text-white text-opacity-90 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Join thousands of creators who are already designing faster, smarter, and more beautifully with our AI-powered tools.
+            Join forward-thinking B2B brands who trust DMI.ai to amplify their digital identity at scale. Start building your brand ecosystem today.
           </p>
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
           <button className="bg-white text-[#8A3FFC] px-8 py-4 rounded-lg text-lg font-bold hover:shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2 group">
             <Sparkles size={20} />
-            Launch Editor
+            Start Building
             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
           </button>
           
           <button className="text-white border-2 border-white border-opacity-50 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-[#8A3FFC] transition-all duration-300 flex items-center gap-2 hover:border-opacity-100">
-            Explore All Features
+            Book Demo
             <ChevronRight size={20} />
           </button>
         </div>
@@ -43,15 +43,15 @@ const CTAFooterSection = () => {
         <div className="flex flex-col sm:flex-row gap-8 justify-center items-center text-white text-opacity-75 text-sm">
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-            <span>Free to start</span>
+            <span>No setup fees</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-            <span>No credit card required</span>
+            <span>14-day free trial</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
-            <span>Export in seconds</span>
+            <span>White-glove onboarding</span>
           </div>
         </div>
       </div>

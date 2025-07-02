@@ -12,7 +12,7 @@ const TrustedBrandsSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-[#8A3FFC] to-[#4F82FF] bg-clip-text text-transparent">
-            Trusted by Brands Worldwide
+            Trusted by B2B Brands Worldwide
           </h2>
         </div>
 
@@ -32,7 +32,7 @@ const TrustedBrandsSection = () => {
         </div>
       </div>
       
-      <style jsx>{`
+      <style>{`
         @keyframes scroll {
           0% {
             transform: translateX(0);

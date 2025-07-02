@@ -7,28 +7,28 @@ const TestimonialsSection = () => {
 
   const testimonials = [
     {
-      quote: "With DMI.ai, we cut design time in half and unlocked creativity across our team.",
-      name: "Molly Chen",
-      role: "Art Director",
-      company: "Expedia",
+      quote: "DMI.ai transformed our brand rollout. We launched across 12 platforms in half the time with perfect consistency.",
+      name: "Sarah Chen",
+      role: "Brand Director",
+      company: "TechFlow",
       avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face",
-      companyLogo: "EX"
+      companyLogo: "TF"
     },
     {
-      quote: "The AI tools are incredibly intuitive. Our marketing campaigns have never looked better.",
-      name: "David Rodriguez",
+      quote: "The AI understands our brand better than some of our designers. It's like having a creative team that never sleeps.",
+      name: "Marcus Rodriguez",
       role: "Creative Lead",
-      company: "Spotify",
+      company: "InnovateCorp",
       avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
-      companyLogo: "SP"
+      companyLogo: "IC"
     },
     {
-      quote: "Real-time collaboration changed how our distributed team works together on designs.",
-      name: "Sarah Kim",
-      role: "Design Manager",
-      company: "Shopify",
+      quote: "From website to mobile app to business cards - all perfectly on-brand. DMI.ai is the future of brand management.",
+      name: "Lisa Wang",
+      role: "Marketing VP",
+      company: "ScaleUp",
       avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
-      companyLogo: "SH"
+      companyLogo: "SU"
     }
   ];
 
@@ -46,16 +46,16 @@ const TestimonialsSection = () => {
   }, []);
 
   return (
-    <section className="py-20 bg-gradient-to-br from-[#8A3FFC] to-[#4F82FF] relative overflow-hidden">
-      <div className="absolute inset-0 bg-black bg-opacity-10"></div>
+    <section className="py-20 bg-gradient-to-br from-purple-50 to-blue-50 relative overflow-hidden">
+      <div className="absolute inset-0 bg-white bg-opacity-60"></div>
       
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-            Why Teams Love DMI.ai
+          <h2 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-[#8A3FFC] to-[#4F82FF] bg-clip-text text-transparent mb-4">
+            Trusted by B2B Leaders
           </h2>
-          <p className="text-xl text-white text-opacity-90 max-w-2xl mx-auto">
-            Join thousands of creative professionals who trust DMI.ai for their design needs
+          <p className="text-xl text-[#444] max-w-2xl mx-auto">
+            See how leading brands use DMI.ai to scale their digital presence
           </p>
         </div>
 
@@ -66,7 +66,7 @@ const TestimonialsSection = () => {
                 key={index}
                 className={`bg-white rounded-xl p-6 shadow-lg transform transition-all duration-500 ${
                   index === currentTestimonial 
-                    ? 'scale-105 ring-4 ring-white ring-opacity-50' 
+                    ? 'scale-105 ring-4 ring-[#8A3FFC] ring-opacity-20' 
                     : 'scale-95 opacity-70'
                 }`}
               >
@@ -90,7 +90,7 @@ const TestimonialsSection = () => {
                     <div className="font-semibold text-[#121212]">{testimonial.name}</div>
                     <div className="text-sm text-[#444]">{testimonial.role}</div>
                   </div>
-                  <div className="w-10 h-10 bg-[#8A3FFC] rounded-lg flex items-center justify-center">
+                  <div className="w-10 h-10 bg-gradient-to-r from-[#8A3FFC] to-[#4F82FF] rounded-lg flex items-center justify-center">
                     <span className="text-white text-sm font-bold">{testimonial.companyLogo}</span>
                   </div>
                 </div>
@@ -101,9 +101,9 @@ const TestimonialsSection = () => {
           <div className="flex justify-center items-center gap-4 mb-8">
             <button
               onClick={prevTestimonial}
-              className="bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full p-2 transition-all duration-300"
+              className="bg-white hover:bg-gray-50 rounded-full p-2 shadow-md transition-all duration-300"
             >
-              <ChevronLeft size={24} className="text-white" />
+              <ChevronLeft size={24} className="text-[#8A3FFC]" />
             </button>
             
             <div className="flex gap-2">
@@ -112,7 +112,7 @@ const TestimonialsSection = () => {
                   key={index}
                   onClick={() => setCurrentTestimonial(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentTestimonial ? 'bg-white' : 'bg-white bg-opacity-50'
+                    index === currentTestimonial ? 'bg-[#8A3FFC]' : 'bg-gray-300'
                   }`}
                 />
               ))}
@@ -120,15 +120,15 @@ const TestimonialsSection = () => {
             
             <button
               onClick={nextTestimonial}
-              className="bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full p-2 transition-all duration-300"
+              className="bg-white hover:bg-gray-50 rounded-full p-2 shadow-md transition-all duration-300"
             >
-              <ChevronRight size={24} className="text-white" />
+              <ChevronRight size={24} className="text-[#8A3FFC]" />
             </button>
           </div>
 
           <div className="text-center">
-            <button className="bg-white text-[#8A3FFC] px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-              Start Designing
+            <button className="bg-gradient-to-r from-[#8A3FFC] to-[#4F82FF] text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+              Start Your Brand Journey
             </button>
           </div>
         </div>

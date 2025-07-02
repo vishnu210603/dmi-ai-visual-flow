@@ -8,6 +8,7 @@ import TemplateCarouselSection from '../components/TemplateCarouselSection';
 import TrustedBrandsSection from '../components/TrustedBrandsSection';
 import TestimonialsSection from '../components/TestimonialsSection';
 import CTAFooterSection from '../components/CTAFooterSection';
+import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 
 const Index = () => {
@@ -22,6 +23,7 @@ const Index = () => {
       <TrustedBrandsSection />
       <TestimonialsSection />
       <CTAFooterSection />
+      <Footer />
     </div>
   );
 };
