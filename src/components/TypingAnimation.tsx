@@ -5,9 +5,10 @@ interface TypingAnimationProps {
   text: string;
   speed?: number;
   className?: string;
+  shouldLoop?: boolean;
 }
 
-const TypingAnimation = ({ text, speed = 50, className = '' }: TypingAnimationProps) => {
+const TypingAnimation = ({ text, speed = 50, className = '', shouldLoop = false }: TypingAnimationProps) => {
   const [displayText, setDisplayText] = useState('');
   const [isTyping, setIsTyping] = useState(true);
 
@@ -19,11 +20,13 @@ const TypingAnimation = ({ text, speed = 50, className = '' }: TypingAnimationPr
         setDisplayText(text.slice(0, displayText.length + 1));
         timeout = setTimeout(typeText, speed);
       } else {
-        // Start erasing after a pause
-        setTimeout(() => {
-          setIsTyping(false);
-          eraseText();
-        }, 2000);
+        if (shouldLoop) {
+          // Start erasing after a pause when looping is enabled
+          setTimeout(() => {
+            setIsTyping(false);
+            eraseText();
+          }, 2000);
+        }
       }
     };
 
@@ -45,7 +48,7 @@ const TypingAnimation = ({ text, speed = 50, className = '' }: TypingAnimationPr
     }
 
     return () => clearTimeout(timeout);
-  }, [displayText, text, speed, isTyping]);
+  }, [displayText, text, speed, isTyping, shouldLoop]);
 
   return (
     <span className={className}>

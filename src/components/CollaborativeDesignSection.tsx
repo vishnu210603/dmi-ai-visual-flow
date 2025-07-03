@@ -65,6 +65,7 @@ const CollaborativeDesignSection = () => {
                       <TypingAnimation 
                         text="Gaurav is reviewing brand consistency..." 
                         speed={80}
+                        shouldLoop={true}
                       />
                     </span>
                   </div>
