@@ -32,7 +32,7 @@ const CTAFooterSection = () => {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <button 
-            onClick={() => navigate('/editor')}
+            onClick={() => navigate('/templates')}
             className="bg-white text-[#8A3FFC] px-8 py-4 rounded-lg text-lg font-semibold hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
           >
             <Sparkles size={20} />

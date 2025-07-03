@@ -125,7 +125,7 @@ const TemplateCarouselSection = () => {
               <div
                 key={index}
                 className="flex-shrink-0 group cursor-pointer snap-start relative"
-                onClick={() => navigate('/editor')}
+                onClick={() => navigate('/templates')}
               >
                 <div className="relative w-72 h-96 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
                   <div className={`absolute inset-0 bg-gradient-to-br ${template.color}`}>
@@ -163,7 +163,7 @@ const TemplateCarouselSection = () => {
 
         <div className="text-center mt-12">
           <button 
-            onClick={() => navigate('/editor')}
+            onClick={() => navigate('/templates')}
             className="bg-gradient-to-r from-[#8A3FFC] to-[#4F82FF] text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2 mx-auto"
           >
             Browse All Templates
