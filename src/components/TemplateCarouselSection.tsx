@@ -1,8 +1,12 @@
 
-import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import React, { useRef } from 'react';
+import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const TemplateCarouselSection = () => {
+  const navigate = useNavigate();
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
   const templates = [
     { 
       name: 'Presentations', 
@@ -66,6 +70,18 @@ const TemplateCarouselSection = () => {
     }
   ];
 
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -84,11 +100,32 @@ const TemplateCarouselSection = () => {
         </div>
 
         <div className="relative">
-          <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
+          {/* Navigation Buttons */}
+          <button
+            onClick={scrollLeft}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-white"
+          >
+            <ChevronLeft size={20} className="text-gray-600" />
+          </button>
+          
+          <button
+            onClick={scrollRight}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-white"
+          >
+            <ChevronRight size={20} className="text-gray-600" />
+          </button>
+
+          {/* Carousel Container */}
+          <div
+            ref={scrollContainerRef}
+            className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide scroll-smooth px-12"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
             {templates.map((template, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 group cursor-pointer snap-start"
+                className="flex-shrink-0 group cursor-pointer snap-start relative"
+                onClick={() => navigate('/editor')}
               >
                 <div className="relative w-72 h-96 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
                   <div className={`absolute inset-0 bg-gradient-to-br ${template.color}`}>
@@ -100,23 +137,22 @@ const TemplateCarouselSection = () => {
                     />
                   </div>
                   
-                  <div className="relative h-full p-6 flex flex-col">
-                    <div className="text-center mb-auto">
-                      <h3 className="text-2xl font-bold text-white mb-2">
+                  <div className="relative h-full p-6 flex flex-col justify-center">
+                    <div className="text-center">
+                      <h3 className="text-3xl font-bold text-white mb-2">
                         {template.name}
                       </h3>
                     </div>
-                    
-                    <div className="mt-auto">
-                      <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                        <p className="text-gray-700 text-sm mb-3">
-                          {template.description}
-                        </p>
-                        <button className="w-full bg-gradient-to-r from-[#8A3FFC] to-[#4F82FF] text-white py-2 px-4 rounded-lg font-medium flex items-center justify-center gap-2 hover:shadow-lg transition-shadow">
-                          Use Template
-                          <ArrowRight size={16} />
-                        </button>
-                      </div>
+                  </div>
+
+                  {/* Vignette overlay with description on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                    <div className="p-6 text-white">
+                      <p className="text-sm mb-3">{template.description}</p>
+                      <button className="w-full bg-gradient-to-r from-[#8A3FFC] to-[#4F82FF] text-white py-2 px-4 rounded-lg font-medium flex items-center justify-center gap-2 hover:shadow-lg transition-shadow">
+                        Use Template
+                        <ArrowRight size={16} />
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -126,7 +162,10 @@ const TemplateCarouselSection = () => {
         </div>
 
         <div className="text-center mt-12">
-          <button className="bg-gradient-to-r from-[#8A3FFC] to-[#4F82FF] text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2 mx-auto">
+          <button 
+            onClick={() => navigate('/editor')}
+            className="bg-gradient-to-r from-[#8A3FFC] to-[#4F82FF] text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2 mx-auto"
+          >
             Browse All Templates
             <ArrowRight size={20} />
           </button>

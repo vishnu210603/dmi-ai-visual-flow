@@ -1,6 +1,6 @@
-
 import React from 'react';
 import { MessageCircle, Users, Share2, Clock } from 'lucide-react';
+import TypingAnimation from './TypingAnimation';
 
 const CollaborativeDesignSection = () => {
   const teamMembers = [
@@ -61,12 +61,12 @@ const CollaborativeDesignSection = () => {
                   
                   <div className="flex items-center gap-2 text-sm text-gray-500">
                     <MessageCircle size={14} />
-                    <span>Gaurav is reviewing brand consistency...</span>
-                    <div className="flex gap-1">
-                      <div className="w-1 h-1 bg-gray-400 rounded-full animate-pulse"></div>
-                      <div className="w-1 h-1 bg-gray-400 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
-                      <div className="w-1 h-1 bg-gray-400 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
-                    </div>
+                    <span>
+                      <TypingAnimation 
+                        text="Gaurav is reviewing brand consistency..." 
+                        speed={80}
+                      />
+                    </span>
                   </div>
                 </div>
               </div>

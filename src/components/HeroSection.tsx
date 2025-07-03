@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Play, Sparkles, Palette, Layout, Zap } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -26,7 +25,7 @@ const HeroSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-in">
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#8A3FFC] to-[#4F82FF] bg-opacity-10 rounded-full px-4 py-2 mb-6">
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#8A3FFC]/20 to-[#4F82FF]/20 rounded-full px-4 py-2 mb-6">
               <Zap size={16} className="text-[#8A3FFC]" />
               <span className="text-[#8A3FFC] text-sm font-medium">AI-First Brand Platform</span>
             </div>

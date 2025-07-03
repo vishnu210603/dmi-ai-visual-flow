@@ -16,13 +16,21 @@ const Index = () => {
     <div className="min-h-screen bg-white">
       <Navbar />
       <HeroSection />
-      <CreateWithAISection />
+      <div id="features">
+        <CreateWithAISection />
+      </div>
       <CollaborativeDesignSection />
       <PrintReadySection />
-      <TemplateCarouselSection />
+      <div id="templates">
+        <TemplateCarouselSection />
+      </div>
       <TrustedBrandsSection />
-      <TestimonialsSection />
-      <CTAFooterSection />
+      <div id="pricing">
+        <TestimonialsSection />
+      </div>
+      <div id="about">
+        <CTAFooterSection />
+      </div>
       <Footer />
     </div>
   );
