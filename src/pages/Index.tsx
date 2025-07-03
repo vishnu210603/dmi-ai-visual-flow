@@ -7,6 +7,7 @@ import PrintReadySection from '../components/PrintReadySection';
 import TemplateCarouselSection from '../components/TemplateCarouselSection';
 import TrustedBrandsSection from '../components/TrustedBrandsSection';
 import TestimonialsSection from '../components/TestimonialsSection';
+import PricingSection from '../components/PricingSection';
 import CTAFooterSection from '../components/CTAFooterSection';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
@@ -26,8 +27,9 @@ const Index = () => {
       </div>
       <TrustedBrandsSection />
       <div id="pricing">
-        <TestimonialsSection />
+        <PricingSection />
       </div>
+      <TestimonialsSection />
       <div id="about">
         <CTAFooterSection />
       </div>
